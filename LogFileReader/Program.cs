@@ -15,8 +15,8 @@ namespace LogFileReader
         
         static void Main()
         {
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
+            //Stopwatch stopwatch = new Stopwatch();
+            //stopwatch.Start();
 
             var logFile = File.ReadLines(@"C:\Users\erikw\OneDrive\Skrivbord\Items.txt");
 
@@ -87,8 +87,8 @@ namespace LogFileReader
                 }
             }
 
-            stopwatch.Stop();
-            Console.WriteLine(stopwatch.Elapsed);
+            //stopwatch.Stop();
+            //Console.WriteLine(stopwatch.Elapsed);
 
             void CompleteObservation(int index, bool isSucccessful, string timeString)
             {
