@@ -1,0 +1,12 @@
+C:\Users\erikw\source\repos\LogFileReader\LogFileReader\bin\Debug\netcoreapp2.1\LogFileReader.deps.json
+C:\Users\erikw\source\repos\LogFileReader\LogFileReader\bin\Debug\netcoreapp2.1\LogFileReader.runtimeconfig.json
+C:\Users\erikw\source\repos\LogFileReader\LogFileReader\bin\Debug\netcoreapp2.1\LogFileReader.runtimeconfig.dev.json
+C:\Users\erikw\source\repos\LogFileReader\LogFileReader\bin\Debug\netcoreapp2.1\LogFileReader.dll
+C:\Users\erikw\source\repos\LogFileReader\LogFileReader\bin\Debug\netcoreapp2.1\LogFileReader.pdb
+C:\Users\erikw\source\repos\LogFileReader\LogFileReader\obj\Debug\netcoreapp2.1\LogFileReader.csprojAssemblyReference.cache
+C:\Users\erikw\source\repos\LogFileReader\LogFileReader\obj\Debug\netcoreapp2.1\LogFileReader.AssemblyInfoInputs.cache
+C:\Users\erikw\source\repos\LogFileReader\LogFileReader\obj\Debug\netcoreapp2.1\LogFileReader.AssemblyInfo.cs
+C:\Users\erikw\source\repos\LogFileReader\LogFileReader\obj\Debug\netcoreapp2.1\LogFileReader.csproj.CoreCompileInputs.cache
+C:\Users\erikw\source\repos\LogFileReader\LogFileReader\obj\Debug\netcoreapp2.1\LogFileReader.dll
+C:\Users\erikw\source\repos\LogFileReader\LogFileReader\obj\Debug\netcoreapp2.1\LogFileReader.pdb
+C:\Users\erikw\source\repos\LogFileReader\LogFileReader\obj\Debug\netcoreapp2.1\LogFileReader.genruntimeconfig.cache
