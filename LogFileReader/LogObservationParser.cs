@@ -12,7 +12,6 @@ namespace LogFileReader
         public const string Connect = "CONNECT", Auth = "AUTH", Fail = "FAIL", Success = "SUCCESS";
         public const int TimeColumn = 0, SessionIdColumn = 1, StatusColumn = 2, IpOrUsernameColumn = 3;
 
-        public string Path { get; private set; }
         public string Pattern { get; private set; }
         public List<Session> Sessions { get; set; }
         public string CurrentDate { get; private set; }
@@ -24,22 +23,35 @@ namespace LogFileReader
             Pattern = @"([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))"; // YYYY-MM-DD
         }
 
-        public IEnumerable<Observation> Reader(string path)
+        public List<Observation> Reader(string path)
         {
-            Path = path;
-            var logLines = File.ReadLines(Path);
-            Regex rgx = new Regex(Pattern);
+            var logLines = File.ReadLines(path);
             Sessions = new List<Session>();
+            DateTime lastLineTimeStamp = new DateTime();
+            DateTime thisLineTimeStamp;
 
             foreach (var line in logLines)
             {
                 if (line.StartsWith("# Written at"))
                 {
+                    Regex rgx = new Regex(Pattern);
                     CurrentDate = rgx.Match(line).Value;
                 }
                 else if (!string.IsNullOrWhiteSpace(line))
                 {
                     var splitRow = line.Split('\t');
+
+                    thisLineTimeStamp = GetDateTimeFromTimeAndDateStrings(splitRow[TimeColumn]);
+
+                    if (lastLineTimeStamp.CompareTo(thisLineTimeStamp) > 0)
+                    {
+                        // If this lines timestamp is earlier than previous row then continue to next iteration 
+                        continue;
+                    }
+                    else
+                    {
+                        lastLineTimeStamp = thisLineTimeStamp;
+                    }
 
                     switch (splitRow[StatusColumn])
                     {
@@ -63,7 +75,6 @@ namespace LogFileReader
                                 {
                                     session.Username = splitRow[IpOrUsernameColumn];
                                 }
-
                                 break;
                             }
 
@@ -73,7 +84,7 @@ namespace LogFileReader
                                 if (session != null)
                                 {
                                     session.IsSuccessful = false;
-                                    session.EventTime = GetDateTimeFromStrings(splitRow[TimeColumn]);
+                                    session.EventTime = GetDateTimeFromTimeAndDateStrings(splitRow[TimeColumn]);
                                     Observations.Add(session.CreateObservation());
                                 }
                                 break;
@@ -86,7 +97,7 @@ namespace LogFileReader
                                 if (session != null)
                                 {
                                     session.IsSuccessful = true;
-                                    session.EventTime = GetDateTimeFromStrings(splitRow[TimeColumn]);
+                                    session.EventTime = GetDateTimeFromTimeAndDateStrings(splitRow[TimeColumn]);
                                     Observations.Add(session.CreateObservation());
                                 }
                                 break;
@@ -97,12 +108,12 @@ namespace LogFileReader
                     }
                 }
             }
-
             return Observations;
         }
 
-        private DateTime GetDateTimeFromStrings(string timeString)
+        private DateTime GetDateTimeFromTimeAndDateStrings(string timeString)
         {
+           //FELHANTERING!!!!!!!!!!!
             var finalDate = DateTime.Parse($"{CurrentDate} {timeString}");
             return finalDate;
         }
@@ -115,7 +126,6 @@ namespace LogFileReader
                 return session;
             }
             return null;
-
         }
     }
 }

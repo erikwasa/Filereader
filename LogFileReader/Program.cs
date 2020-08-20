@@ -11,7 +11,7 @@ namespace LogFileReader
     class Program
     {
 
-        
+
         static void Main()
         {
             var logFile = @"C:\Users\erikw\OneDrive\Skrivbord\Items.txt";

@@ -12,7 +12,7 @@ namespace LogFileReader
         public bool? Success
         {
             get { return success; }
-            set 
+            set
             {
                 if (value != null)
                 {
