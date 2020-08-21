@@ -44,8 +44,5 @@ namespace LogFileReader
             IpAddress = null;
             Username = null;
         }
-
-
-
     }
 }
