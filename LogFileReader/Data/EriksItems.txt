@@ -1,0 +1,18 @@
+﻿# Written at 2020-08-17 13:32:30
+# This log is written as a comment and should be ignored
+13:32:03	239	CONNECT	1.2.3.4
+13:32:03	xyz	CONNECT	4.5.6.7
+13:32:02	231	DOWNLOAD	/secret/supersecret.zip
+13:32:03	209	UPLOAD	/secret/bank-pin-codes.txt
+13:32:03	199	DISCONNECT	-
+13:32:03	239	AUTH	admin
+13:32:01	239	FAIL	-
+13:32:05	240	CONNECT	1.2.3.4
+13:xx:09	240	AUTH	admin
+13:32:13	240	SUCCESS	-
+13:32:17	230	DISCONNECT	-
+13:32:21	241	CONNECT	5913:c704:2fe5:c4e6::bb97:168c
+13:32:22	241	AUTHOR	Stephen King
+13:32:23	203	LIST	/secret/
+13:32:25	241	FAIL	-
+13:32:50	239	FAIL	-

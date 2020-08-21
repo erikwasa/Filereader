@@ -12,14 +12,16 @@ namespace LogFileReader
         public bool? Success
         {
             get { return success; }
-            set
+            set 
             {
                 if (value != null)
                 {
                     success = (bool)value;
                 }
+
             }
         }
+
         private DateTime observationTime;
         public DateTime? ObservationTime
         {

@@ -39,5 +39,13 @@ namespace LogFileReader
             this.EventTime = null;
         }
 
+        public void ResetSessionDueToDuplicateConnection()
+        {
+            IpAddress = null;
+            Username = null;
+        }
+
+
+
     }
 }

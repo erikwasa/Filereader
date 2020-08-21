@@ -14,7 +14,9 @@ namespace LogFileReader
 
         static void Main()
         {
-            var logFile = @"C:\Users\erikw\OneDrive\Skrivbord\Items.txt";
+            var logFile = @"C:\Users\erikw\source\repos\LogFileReader\LogFileReader\Data\EriksItems.txt";
+
+            //var logFile = @"C:\Users\erikw\OneDrive\Skrivbord\Items.txt";
 
             var parser = new LogObservationParser();
             var observations = parser.Reader(logFile);
