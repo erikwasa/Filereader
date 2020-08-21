@@ -14,7 +14,7 @@ namespace LogFileReader
 
         static void Main()
         {
-            var logFile = @"C:\Users\erikw\Downloads\logfile_micke (1).txt";
+            var logFile = @"C:\Users\erikw\source\repos\LogFileReader\LogFileReader\Data\EriksItems.txt";
 
             //var logFile = @"C:\Users\erikw\OneDrive\Skrivbord\Items.txt";
 
@@ -23,11 +23,7 @@ namespace LogFileReader
 
             foreach (var observation in observations)
             {
-                Console.WriteLine(observation.IpAddress);
-                Console.WriteLine(observation.ObservationTime);
-                Console.WriteLine(observation.Success);
-                Console.WriteLine(observation.UserName);
-                Console.WriteLine();
+                Console.WriteLine(observation);                
             }
 
             Console.ReadLine();

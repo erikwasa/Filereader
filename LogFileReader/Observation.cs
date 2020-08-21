@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Text;
 
 namespace LogFileReader
@@ -36,5 +37,12 @@ namespace LogFileReader
         }
 
         public string IpAddress { get; set; }
+
+        public override string ToString()
+        {
+            string success = (bool)this.Success ? "SUCCESS" : "FAIL";
+
+            return $"{this.ObservationTime}\t{success}\t{this.UserName}\t{this.IpAddress}";        
+        }
     }
 }
