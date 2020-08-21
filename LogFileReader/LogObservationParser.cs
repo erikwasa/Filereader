@@ -64,20 +64,19 @@ namespace LogFileReader
                         case Connect:
                             {
                                 var session = FindSession(splitRow[SessionIdColumn]);
+                                int.TryParse(splitRow[SessionIdColumn], out int sessionId);
 
-                                if (session != null)
+                                if (sessionId > 0)
                                 {
-                                    session.ResetSessionDueToDuplicateConnection();
-                                }
-
-                                else if (session == null)
-                                {
-                                    session = new Session();
-                                    Sessions.Add(session);
-                                }
-
-                                if (int.TryParse(splitRow[SessionIdColumn], out int sessionId))
-                                {
+                                    if (session != null)
+                                    {
+                                        session.ResetSessionDueToDuplicateConnection();
+                                    }
+                                    else if (session == null)
+                                    {
+                                        session = new Session();
+                                        Sessions.Add(session);
+                                    }
                                     session.IpAddress = splitRow[IpOrUsernameColumn];
                                     session.SessionId = sessionId;
                                 }
@@ -154,5 +153,7 @@ namespace LogFileReader
                 }
             }
         }
+
+
     }
 }

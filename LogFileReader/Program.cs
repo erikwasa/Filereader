@@ -14,7 +14,7 @@ namespace LogFileReader
 
         static void Main()
         {
-            var logFile = @"C:\Users\erikw\source\repos\LogFileReader\LogFileReader\Data\EriksItems.txt";
+            var logFile = @"C:\Users\erikw\Downloads\logfile_micke (1).txt";
 
             //var logFile = @"C:\Users\erikw\OneDrive\Skrivbord\Items.txt";
 
